@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+      
+  <modelVersion>4.0.0</modelVersion>
+      
+  <groupId>com.parent</groupId>
+      
+  <artifactId>base-parent</artifactId>
+      
+  <version>1.0.0</version>
+      
+  <packaging>pom</packaging>
+      
+  <name>base-parent</name>
+      
+  <properties>
+            
+    <buildDirectory>${project.basedir}/target.nosync</buildDirectory>
+            
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+            
+    <java.version>20</java.version>
+            
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+            
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+            
+    <aspectj.version>1.9.19</aspectj.version>
+            
+    <spring.web>6.0.9</spring.web>
+            
+    <!-- https://mvnrepository.com/artifact/junit/junit -->
+            
+    <junit.version>4.13.2</junit.version>
+            
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+            
+    <maven.compiler.version>3.11.0</maven.compiler.version>
+            
+    <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-resources-plugin -->
+            
+    <maven.resource.version>3.3.1</maven.resource.version>
+        
+  </properties>
+      
+  <dependencies>
+            
+    <dependency>
+                  
+      <groupId>junit</groupId>
+                  
+      <artifactId>junit</artifactId>
+                  
+      <version>${junit.version}</version>
+                  
+      <scope>test</scope>
+              
+    </dependency>
+        
+  </dependencies>
+      
+  <build>
+            
+    <directory>${buildDirectory}</directory>
+            
+    <plugins>
+                  
+      <plugin>
+                        
+        <artifactId>maven-compiler-plugin</artifactId>
+                        
+        <version>${maven.compiler.version}</version>
+                        
+        <configuration>
+                              
+          <source>${maven.compiler.source}</source>
+                              
+          <target>${maven.compiler.target}</target>
+                              
+          <compilerArgument>-proc:none</compilerArgument>
+                          
+        </configuration>
+                    
+      </plugin>
+                  
+      <plugin>
+                        
+        <artifactId>maven-resources-plugin</artifactId>
+                        
+        <version>${maven.resource.version}</version>
+                    
+      </plugin>
+              
+    </plugins>
+        
+  </build>
+  
+  <modules>
+      
+    <module>microservice-parent</module>
+      
+  </modules>
+</project>
